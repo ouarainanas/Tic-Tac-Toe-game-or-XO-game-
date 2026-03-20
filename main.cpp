@@ -45,7 +45,7 @@ void computerMove() {
             if (b[i][j] != 'X' && b[i][j] != 'O') {
                 char tmp = b[i][j];
                 b[i][j] = 'X';
-                if (check() == 'X') { b[i][j] = 'X'; return; }
+                if (check() == 'X') { b[i][j] = 'O'; return; }
                 b[i][j] = tmp;
             }
     if (b[1][1] != 'X' && b[1][1] != 'O') { b[1][1] = 'O'; return; }
@@ -67,7 +67,7 @@ int main() {
         cout << "Pick a number (1-9): ";
         cin >> n;
         int r = n / 3, c = n % 3;
-        if (n < 1 || n > 9 || b[r][c] == 'X' || b[r][c] == 'O') {
+        if (n < 0 || n > 8 || b[r][c] == 'X' || b[r][c] == 'O') {
             cout << "invalid move";
             continue;
         }

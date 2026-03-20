@@ -66,12 +66,12 @@ int main() {
         int n;
         cout << "Pick a number (1-9): ";
         cin >> n;
+        n--;
         int r = n / 3, c = n % 3;
         if (n < 0 || n > 8 || b[r][c] == 'X' || b[r][c] == 'O') {
             cout << "invalid move";
             continue;
         }
-        n--;
         b[r][c] = 'X';
         if (check() == 'X') { draw(); cout << "you win!"; break; }
         if (full())          { draw(); cout << "draw!";    break; }
